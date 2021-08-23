@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Albums</title>
+    <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+<body>
+<h1>SoundBar</h1>
+<span th:if="${albumList.empty}">
+    No Albums Available
+</span>
+<ul th:each="album : albumList">
+    <li th:text = "${album.getTitle()}"></li>
+    <li th:text = "${album.getArtist()}"></li>
+    <li th:text = "${album.getSongCount()}"></li>
+    <li th:text = "${album.getLength()}"></li>
+    <li><img th:src = "${album.getImageUrl()}"/></li>
+</ul>
+</body>
+</html>
